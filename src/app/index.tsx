@@ -1,28 +1,26 @@
-import { useAuth } from "@clerk/expo";
-import { useHostedAuth } from "@clerk/expo/hosted-auth";
-import { Button, Text, View } from "react-native";
+import { Link } from "expo-router";
+import { Text, View, StyleSheet } from "react-native";
 
-export default function GoogleSignInButton() {
-  const { isLoaded, isSignedIn } = useAuth();
-  const { startHostedAuth } = useHostedAuth();
-
-  const handleSignIn = async () => {
-    try {
-      await startHostedAuth({ mode: "sign-in" });
-    } catch (error) {
-      console.error("Sign-in failed:", error);
-    }
-  };
-
-  if (!isLoaded) return null;
-
-  if (isSignedIn) {
-    return <Text>You are signed in!</Text>;
-  }
+export default function Index() {
   return (
-    <View className="p-8 bg-black flex-y-1 justify-center items-center h-screen">
-      <Text className="text-black text-xl mb-4">Sign in with Google</Text>
-      <Button title="Continue with Google" onPress={handleSignIn} />
+    <View style={styles.container}>
+      <Text>Welcome to Easy Agent Native!
+        Mobile testing?
+      </Text>
+       <Link href={"/about"} style={{ marginTop: 20 }}>
+        Go to About
+      </Link> 
+      <Text className="text-lg font-bold text-blue-500">
+        Welcome to Nativewind!
+      </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
