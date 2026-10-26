@@ -8,9 +8,11 @@
     "scheme": "easyagentnativ",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.talhadar.easyagentnativ"
     },
     "android": {
+      "package": "com.talhadar.easyagentnativ",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -32,18 +34,26 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "@clerk/expo",
+      "expo-secure-store",
+      "expo-web-browser",
+      "@clerk/expo-google-signin"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
     },
     "extra": {
+        "EXPO_PUBLIC_CLERK_GOOGLE_ANDROID_CLIENT_ID": "925204490073-a6qnij2t605vfb7lq7njr4o44djlf93q.apps.googleusercontent.com",
+        "EXPO_PUBLIC_CLERK_GOOGLE_WEB_CLIENT_ID": "925204490073-40q9agf3c8ofmbspeae8a5enj4uvnp8m.apps.googleusercontent.com",
+
       "router": {},
       "eas": {
         "projectId": "115149ca-8e28-47c6-9774-c99c6d194906"
       }
     },
+   
     "owner": "talhadar02s-team"
   }
 }
