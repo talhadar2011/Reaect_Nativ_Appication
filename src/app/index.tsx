@@ -48,6 +48,7 @@ export default function Index() {
         }
       } else {
         // Non-Google related error
+        Alert.alert("NONGOOGLE ERROR");
         Alert.alert(
           "Error",
           error?.message || "Something went wrong during sign-in.",
