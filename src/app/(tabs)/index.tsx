@@ -1,11 +1,11 @@
 import { Button, Image, Text, View } from "react-native";
-import { useAuth } from "../app/context/AuthContext";
+import { useAuth } from "../../app/context/AuthContext";
 
 export default function Home() {
   const { user, signOut } = useAuth();
 
   return (
-    <View className="flex-1 justify-center items-center">
+    <View className="flex-1 justify-center items-center bg-primary">
       <Image
         source={{ uri: user?.user.photo ?? undefined }}
         alt="User profile"
